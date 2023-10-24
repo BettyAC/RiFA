@@ -1,0 +1,13 @@
+Config file /mnt/data/bioinfoteam/Betty/malpipeline/data/config.yaml is extended by additional config specified via the command line.
+Building DAG of jobs...
+AmbiguousRuleException:
+Rules bbduk and create_folders are ambiguous for the file /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R1_trimmed.fastq.gz.
+Consider starting rule output with a unique prefix, constrain your wildcards, or use the ruleorder directive.
+Wildcards:
+	bbduk: sample=7G8-PC4_S90
+	create_folders: prefix=trimmed/7G8-PC4_S90_R1_trimmed.fastq.gz
+Expected input files:
+	bbduk: /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC4_S90_R1_001.fastq.gz /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC4_S90_R2_001.fastq.gz
+	create_folders: Expected output files:
+	bbduk: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R1_trimmed.fastq.gz /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R2_trimmed.fastq.gz /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_stats.txt
+	create_folders: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R1_trimmed.fastq.gz

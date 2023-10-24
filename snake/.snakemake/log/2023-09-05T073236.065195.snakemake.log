@@ -1,0 +1,3 @@
+WildcardError in line 20 of /mnt/data/bioinfoteam/Betty/malpipeline/snake/snakefile:
+No values given for wildcard 'prefix'.
+  File "/mnt/data/bioinfoteam/Betty/malpipeline/snake/snakefile", line 20, in <module>

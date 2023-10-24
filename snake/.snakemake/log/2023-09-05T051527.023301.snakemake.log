@@ -1,0 +1,3 @@
+NameError in line 20 of /mnt/data/bioinfoteam/Betty/malpipeline/snake/snakefile:
+name 'params' is not defined
+  File "/mnt/data/bioinfoteam/Betty/malpipeline/snake/snakefile", line 20, in <module>

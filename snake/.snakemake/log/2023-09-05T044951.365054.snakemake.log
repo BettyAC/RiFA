@@ -1,0 +1,4 @@
+Config file /mnt/data/bioinfoteam/Betty/malpipeline/data/config.yaml is extended by additional config specified via the command line.
+NameError in line 20 of /mnt/data/bioinfoteam/Betty/malpipeline/snake/snakefile:
+name 'params' is not defined
+  File "/mnt/data/bioinfoteam/Betty/malpipeline/snake/snakefile", line 20, in <module>

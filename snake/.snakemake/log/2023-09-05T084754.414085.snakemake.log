@@ -1,0 +1,4 @@
+Config file /mnt/data/bioinfoteam/Betty/malpipeline/data/config.yaml is extended by additional config specified via the command line.
+WildcardError in line 14 of /mnt/data/bioinfoteam/Betty/malpipeline/snake/snakefile:
+No values given for wildcard 'prefix'.
+  File "/mnt/data/bioinfoteam/Betty/malpipeline/snake/snakefile", line 14, in <module>

@@ -1,0 +1,135 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                    count    min threads    max threads
+-------------------  -------  -------------  -------------
+all                        1              1              1
+annotate                   6              1              1
+bbduk                      6              1              1
+bowtie                     6              1              1
+call_vcf                   6              1              1
+extract_snpeff_info        6              1              1
+liftover                   6              1              1
+samtools_sort              6              1              1
+tobam                      6              1              1
+total                     49              1              1
+
+Select jobs to execute...
+
+[Fri Oct 20 08:49:20 2023]
+rule bbduk:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC3_S218_R1_001.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC3_S218_R2_001.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_stats.txt
+    jobid: 43
+    reason: Forced execution
+    wildcards: sample=D6-PC3_S218
+    resources: tmpdir=/tmp
+
+/mnt/data/bioinfoteam/Betty/anaconda3b/envs/mala/bin/bbduk.sh    trimq=20 maq=20 minlength=100  ordered=t  in=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC3_S218_R1_001.fastq.gz in2=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC3_S218_R2_001.fastq.gz out=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_R1_trimmed.fastq.gz out2=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_R2_trimmed.fastq.gz stats=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_stats.txt
+
+[Fri Oct 20 08:49:27 2023]
+rule bbduk:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC2_S35_R1_001.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC2_S35_R2_001.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_stats.txt
+    jobid: 36
+    reason: Forced execution
+    wildcards: sample=D6-PC2_S35
+    resources: tmpdir=/tmp
+
+/mnt/data/bioinfoteam/Betty/anaconda3b/envs/mala/bin/bbduk.sh    trimq=20 maq=20 minlength=100  ordered=t  in=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC2_S35_R1_001.fastq.gz in2=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC2_S35_R2_001.fastq.gz out=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R1_trimmed.fastq.gz out2=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R2_trimmed.fastq.gz stats=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_stats.txt
+
+[Fri Oct 20 08:49:27 2023]
+rule bbduk:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC1_S89_R1_001.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC1_S89_R2_001.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_stats.txt
+    jobid: 29
+    reason: Forced execution
+    wildcards: sample=D6-PC1_S89
+    resources: tmpdir=/tmp
+
+/mnt/data/bioinfoteam/Betty/anaconda3b/envs/mala/bin/bbduk.sh    trimq=20 maq=20 minlength=100  ordered=t  in=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC1_S89_R1_001.fastq.gz in2=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC1_S89_R2_001.fastq.gz out=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_R1_trimmed.fastq.gz out2=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_R2_trimmed.fastq.gz stats=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_stats.txt
+
+[Fri Oct 20 08:49:27 2023]
+rule bbduk:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC6_S219_R1_001.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC6_S219_R2_001.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_stats.txt
+    jobid: 22
+    reason: Forced execution
+    wildcards: sample=7G8-PC6_S219
+    resources: tmpdir=/tmp
+
+/mnt/data/bioinfoteam/Betty/anaconda3b/envs/mala/bin/bbduk.sh    trimq=20 maq=20 minlength=100  ordered=t  in=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC6_S219_R1_001.fastq.gz in2=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC6_S219_R2_001.fastq.gz out=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R1_trimmed.fastq.gz out2=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R2_trimmed.fastq.gz stats=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_stats.txt
+
+[Fri Oct 20 08:49:27 2023]
+rule bbduk:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC5_S37_R1_001.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC5_S37_R2_001.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_stats.txt
+    jobid: 15
+    reason: Forced execution
+    wildcards: sample=7G8-PC5_S37
+    resources: tmpdir=/tmp
+
+/mnt/data/bioinfoteam/Betty/anaconda3b/envs/mala/bin/bbduk.sh    trimq=20 maq=20 minlength=100  ordered=t  in=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC5_S37_R1_001.fastq.gz in2=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC5_S37_R2_001.fastq.gz out=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_R1_trimmed.fastq.gz out2=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_R2_trimmed.fastq.gz stats=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_stats.txt
+
+[Fri Oct 20 08:49:27 2023]
+rule bbduk:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC4_S90_R1_001.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC4_S90_R2_001.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_stats.txt
+    jobid: 8
+    reason: Forced execution
+    wildcards: sample=7G8-PC4_S90
+    resources: tmpdir=/tmp
+
+/mnt/data/bioinfoteam/Betty/anaconda3b/envs/mala/bin/bbduk.sh    trimq=20 maq=20 minlength=100  ordered=t  in=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC4_S90_R1_001.fastq.gz in2=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC4_S90_R2_001.fastq.gz out=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R1_trimmed.fastq.gz out2=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R2_trimmed.fastq.gz stats=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_stats.txt
+Terminating processes on user request, this might take some time.
+[Fri Oct 20 09:05:10 2023]
+Error in rule bbduk:
+    jobid: 22
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_stats.txt
+    shell:
+        /mnt/data/bioinfoteam/Betty/anaconda3b/envs/mala/bin/bbduk.sh    trimq=20 maq=20 minlength=100  ordered=t  in=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC6_S219_R1_001.fastq.gz in2=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC6_S219_R2_001.fastq.gz out=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R1_trimmed.fastq.gz out2=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R2_trimmed.fastq.gz stats=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_stats.txt
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Oct 20 09:05:10 2023]
+Error in rule bbduk:
+    jobid: 15
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_stats.txt
+    shell:
+        /mnt/data/bioinfoteam/Betty/anaconda3b/envs/mala/bin/bbduk.sh    trimq=20 maq=20 minlength=100  ordered=t  in=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC5_S37_R1_001.fastq.gz in2=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC5_S37_R2_001.fastq.gz out=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_R1_trimmed.fastq.gz out2=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_R2_trimmed.fastq.gz stats=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_stats.txt
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Oct 20 09:05:10 2023]
+[Fri Oct 20 09:05:10 2023]
+Error in rule bbduk:
+    jobid: 8
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_stats.txt
+    shell:
+        /mnt/data/bioinfoteam/Betty/anaconda3b/envs/mala/bin/bbduk.sh    trimq=20 maq=20 minlength=100  ordered=t  in=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC4_S90_R1_001.fastq.gz in2=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC4_S90_R2_001.fastq.gz out=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R1_trimmed.fastq.gz out2=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R2_trimmed.fastq.gz stats=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_stats.txt
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error in rule bbduk:
+    jobid: 29
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_stats.txt
+    shell:
+        /mnt/data/bioinfoteam/Betty/anaconda3b/envs/mala/bin/bbduk.sh    trimq=20 maq=20 minlength=100  ordered=t  in=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC1_S89_R1_001.fastq.gz in2=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC1_S89_R2_001.fastq.gz out=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_R1_trimmed.fastq.gz out2=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_R2_trimmed.fastq.gz stats=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_stats.txt
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Oct 20 09:05:10 2023]
+[Fri Oct 20 09:05:10 2023]
+Error in rule bbduk:
+    jobid: 43
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_stats.txt
+    shell:
+        /mnt/data/bioinfoteam/Betty/anaconda3b/envs/mala/bin/bbduk.sh    trimq=20 maq=20 minlength=100  ordered=t  in=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC3_S218_R1_001.fastq.gz in2=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC3_S218_R2_001.fastq.gz out=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_R1_trimmed.fastq.gz out2=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_R2_trimmed.fastq.gz stats=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_stats.txt
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error in rule bbduk:
+    jobid: 36
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_stats.txt
+    shell:
+        /mnt/data/bioinfoteam/Betty/anaconda3b/envs/mala/bin/bbduk.sh    trimq=20 maq=20 minlength=100  ordered=t  in=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC2_S35_R1_001.fastq.gz in2=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC2_S35_R2_001.fastq.gz out=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R1_trimmed.fastq.gz out2=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R2_trimmed.fastq.gz stats=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_stats.txt
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Complete log: .snakemake/log/2023-10-20T084917.889788.snakemake.log

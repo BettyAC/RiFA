@@ -1,0 +1,6 @@
+Config file /mnt/data/bioinfoteam/Betty/malpipeline/data/config.yaml is extended by additional config specified via the command line.
+The flag 'directory' used in rule all is only valid for outputs, not inputs.
+Building DAG of jobs...
+WildcardError in line 12 of /mnt/data/bioinfoteam/Betty/malpipeline/snake/snakefile:
+Wildcards in input files cannot be determined from output files:
+'prefix'

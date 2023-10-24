@@ -1,0 +1,3 @@
+KeyError in line 157 of /mnt/data/bioinfoteam/Betty/malpipeline/snake/snakefile:
+'samples'
+  File "/mnt/data/bioinfoteam/Betty/malpipeline/snake/snakefile", line 157, in <module>

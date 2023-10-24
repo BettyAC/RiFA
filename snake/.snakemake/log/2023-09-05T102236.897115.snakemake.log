@@ -1,0 +1,4 @@
+Config file /mnt/data/bioinfoteam/Betty/malpipeline/data/config.yaml is extended by additional config specified via the command line.
+Building DAG of jobs...
+Nothing to be done (all requested files are present and up to date).
+Complete log: .snakemake/log/2023-09-05T102236.897115.snakemake.log

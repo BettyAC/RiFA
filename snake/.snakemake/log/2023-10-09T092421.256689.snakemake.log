@@ -1,0 +1,259 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count    min threads    max threads
+-------------  -------  -------------  -------------
+all                  1              1              1
+annotate             6              1              1
+bbduk                6              1              1
+bowtie               6              1              1
+call_vcf             6              1              1
+liftover             6              1              1
+samtools_sort        6              1              1
+tobam                6              1              1
+total               43              1              1
+
+Select jobs to execute...
+
+[Mon Oct  9 09:24:22 2023]
+rule bbduk:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC3_S218_R1_001.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC3_S218_R2_001.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_stats.txt
+    jobid: 42
+    reason: Forced execution
+    wildcards: sample=D6-PC3_S218
+    resources: tmpdir=/tmp
+
+
+[Mon Oct  9 09:24:23 2023]
+rule bbduk:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC2_S35_R1_001.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC2_S35_R2_001.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_stats.txt
+    jobid: 35
+    reason: Forced execution
+    wildcards: sample=D6-PC2_S35
+    resources: tmpdir=/tmp
+
+
+[Mon Oct  9 09:24:23 2023]
+rule bbduk:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC1_S89_R1_001.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC1_S89_R2_001.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_stats.txt
+    jobid: 28
+    reason: Forced execution
+    wildcards: sample=D6-PC1_S89
+    resources: tmpdir=/tmp
+
+
+[Mon Oct  9 09:24:23 2023]
+rule bbduk:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC6_S219_R1_001.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC6_S219_R2_001.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_stats.txt
+    jobid: 21
+    reason: Forced execution
+    wildcards: sample=7G8-PC6_S219
+    resources: tmpdir=/tmp
+
+
+[Mon Oct  9 09:24:23 2023]
+rule bbduk:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC5_S37_R1_001.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC5_S37_R2_001.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_stats.txt
+    jobid: 14
+    reason: Forced execution
+    wildcards: sample=7G8-PC5_S37
+    resources: tmpdir=/tmp
+
+
+[Mon Oct  9 09:24:23 2023]
+rule bbduk:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC4_S90_R1_001.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC4_S90_R2_001.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_stats.txt
+    jobid: 7
+    reason: Forced execution
+    wildcards: sample=7G8-PC4_S90
+    resources: tmpdir=/tmp
+
+[Mon Oct  9 09:24:25 2023]
+Finished job 42.
+1 of 43 steps (2%) done
+Select jobs to execute...
+
+[Mon Oct  9 09:24:25 2023]
+rule bowtie:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_R2_trimmed.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218_aln.sam
+    jobid: 41
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_R2_trimmed.fastq.gz
+    wildcards: sample=D6-PC3_S218
+    resources: tmpdir=/tmp
+
+[Mon Oct  9 09:24:28 2023]
+Finished job 41.
+2 of 43 steps (5%) done
+Select jobs to execute...
+
+[Mon Oct  9 09:24:28 2023]
+rule tobam:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218_aln.sam
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218_aln.bam
+    jobid: 40
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218_aln.sam
+    wildcards: sample=D6-PC3_S218
+    resources: tmpdir=/tmp
+
+[Mon Oct  9 09:24:28 2023]
+Finished job 7.
+3 of 43 steps (7%) done
+Select jobs to execute...
+
+[Mon Oct  9 09:24:28 2023]
+rule bowtie:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R2_trimmed.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC4_S90_aln.sam
+    jobid: 6
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R2_trimmed.fastq.gz
+    wildcards: sample=7G8-PC4_S90
+    resources: tmpdir=/tmp
+
+[Mon Oct  9 09:24:30 2023]
+Finished job 28.
+4 of 43 steps (9%) done
+Select jobs to execute...
+
+[Mon Oct  9 09:24:30 2023]
+rule bowtie:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_R2_trimmed.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC1_S89_aln.sam
+    jobid: 27
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_R1_trimmed.fastq.gz
+    wildcards: sample=D6-PC1_S89
+    resources: tmpdir=/tmp
+
+[Mon Oct  9 09:24:30 2023]
+Finished job 40.
+5 of 43 steps (12%) done
+[Mon Oct  9 09:24:30 2023]
+Finished job 21.
+6 of 43 steps (14%) done
+[Mon Oct  9 09:24:30 2023]
+Finished job 35.
+7 of 43 steps (16%) done
+Select jobs to execute...
+
+[Mon Oct  9 09:24:30 2023]
+rule bowtie:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R2_trimmed.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC6_S219_aln.sam
+    jobid: 20
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R2_trimmed.fastq.gz
+    wildcards: sample=7G8-PC6_S219
+    resources: tmpdir=/tmp
+
+
+[Mon Oct  9 09:24:30 2023]
+rule bowtie:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R2_trimmed.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC2_S35_aln.sam
+    jobid: 34
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R2_trimmed.fastq.gz
+    wildcards: sample=D6-PC2_S35
+    resources: tmpdir=/tmp
+
+
+[Mon Oct  9 09:24:30 2023]
+rule samtools_sort:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218_aln.bam
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218.sorted.bam
+    jobid: 39
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218_aln.bam
+    wildcards: sample=D6-PC3_S218
+    resources: tmpdir=/tmp
+
+[Mon Oct  9 09:24:31 2023]
+Finished job 39.
+8 of 43 steps (19%) done
+Select jobs to execute...
+
+[Mon Oct  9 09:24:31 2023]
+rule call_vcf:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218.sorted.bam
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC3_S218.vcf
+    jobid: 38
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218.sorted.bam
+    wildcards: sample=D6-PC3_S218
+    resources: tmpdir=/tmp
+
+[Mon Oct  9 09:24:32 2023]
+Finished job 38.
+9 of 43 steps (21%) done
+Select jobs to execute...
+
+[Mon Oct  9 09:24:32 2023]
+rule liftover:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC3_S218.vcf
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/aD6-PC3_S218.vcf
+    jobid: 37
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC3_S218.vcf
+    wildcards: sample=D6-PC3_S218
+    resources: tmpdir=/tmp
+
+[Mon Oct  9 09:24:32 2023]
+Finished job 37.
+10 of 43 steps (23%) done
+Select jobs to execute...
+
+[Mon Oct  9 09:24:32 2023]
+rule annotate:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/aD6-PC3_S218.vcf
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/ann/D6-PC3_S218.ann
+    jobid: 36
+    reason: Missing output files: /mnt/data/bioinfoteam/Betty/malpipeline/results/ann/D6-PC3_S218.ann; Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/aD6-PC3_S218.vcf
+    wildcards: sample=D6-PC3_S218
+    resources: tmpdir=/tmp
+
+[Mon Oct  9 09:24:34 2023]
+Error in rule annotate:
+    jobid: 36
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/ann/D6-PC3_S218.ann
+    shell:
+        
+       java -Djava.io.tmpdir=/mnt/data/bioinfoteam/Betty/tmpall/  -Xmx20G -jar /mnt/data/bioinfoteam/Betty/snpEff/snpEff.jar build -genbank  -v /mnt/data/bioinfoteam/Betty/snpEff/data/Plasmodium_falciparum_1
+       java -Xmx20G -jar /mnt/data/bioinfoteam/Betty/snpEff/snpEff.jar  /mnt/data/bioinfoteam/Betty/snpEff/data/Plasmodium_falciparum_1 -nodownload /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/aD6-PC3_S218.vcf > /mnt/data/bioinfoteam/Betty/malpipeline/results/ann/D6-PC3_S218.ann
+       
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Oct  9 09:24:40 2023]
+Finished job 14.
+11 of 43 steps (26%) done
+[Mon Oct  9 09:24:40 2023]
+Finished job 27.
+12 of 43 steps (28%) done
+Terminating processes on user request, this might take some time.
+[Mon Oct  9 09:24:43 2023]
+Error in rule bowtie:
+    jobid: 6
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC4_S90_aln.sam
+    shell:
+         bowtie2 --very-sensitive  --end-to-end   -x /mnt/data/bioinfoteam/Betty/malpipeline/data/reference/refs_all_index -1 /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R1_trimmed.fastq.gz -2 /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R2_trimmed.fastq.gz -p 8 -S /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC4_S90_aln.sam
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Oct  9 09:24:46 2023]
+Error in rule bowtie:
+    jobid: 34
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC2_S35_aln.sam
+    shell:
+         bowtie2 --very-sensitive  --end-to-end   -x /mnt/data/bioinfoteam/Betty/malpipeline/data/reference/refs_all_index -1 /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R1_trimmed.fastq.gz -2 /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R2_trimmed.fastq.gz -p 8 -S /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC2_S35_aln.sam
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Oct  9 09:24:46 2023]
+Error in rule bowtie:
+    jobid: 20
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC6_S219_aln.sam
+    shell:
+         bowtie2 --very-sensitive  --end-to-end   -x /mnt/data/bioinfoteam/Betty/malpipeline/data/reference/refs_all_index -1 /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R1_trimmed.fastq.gz -2 /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R2_trimmed.fastq.gz -p 8 -S /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC6_S219_aln.sam
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Complete log: .snakemake/log/2023-10-09T092421.256689.snakemake.log

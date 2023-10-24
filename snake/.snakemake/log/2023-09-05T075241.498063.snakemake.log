@@ -1,0 +1,24 @@
+Config file /mnt/data/bioinfoteam/Betty/malpipeline/data/config.yaml is extended by additional config specified via the command line.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count    min threads    max threads
+--------------  -------  -------------  -------------
+create_folders        1              1              1
+total                 1              1              1
+
+Select jobs to execute...
+
+[Tue Sep  5 07:52:41 2023]
+rule create_folders:
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/all
+    jobid: 0
+    reason: Missing output files: /mnt/data/bioinfoteam/Betty/malpipeline/results/all
+    resources: tmpdir=/tmp
+
+[Tue Sep  5 07:52:43 2023]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: .snakemake/log/2023-09-05T075241.498063.snakemake.log

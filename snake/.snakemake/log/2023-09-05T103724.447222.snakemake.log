@@ -1,0 +1,4 @@
+Config file /mnt/data/bioinfoteam/Betty/malpipeline/data/config.yaml is extended by additional config specified via the command line.
+KeyError in line 41 of /mnt/data/bioinfoteam/Betty/malpipeline/snake/snakefile:
+'malr4'
+  File "/mnt/data/bioinfoteam/Betty/malpipeline/snake/snakefile", line 41, in <module>

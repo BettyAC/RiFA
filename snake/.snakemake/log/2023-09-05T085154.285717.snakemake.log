@@ -1,0 +1,98 @@
+Config file /mnt/data/bioinfoteam/Betty/malpipeline/data/config.yaml is extended by additional config specified via the command line.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count    min threads    max threads
+--------------  -------  -------------  -------------
+all                   1              1              1
+create_folders        6              1              1
+total                 7              1              1
+
+Select jobs to execute...
+
+[Tue Sep  5 08:51:54 2023]
+rule create_folders:
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC4_S90_aln.sam
+    jobid: 1
+    reason: Missing output files: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC4_S90_aln.sam
+    wildcards: prefix=bam/7G8-PC4_S90_aln.sam
+    resources: tmpdir=/tmp
+
+
+[Tue Sep  5 08:51:56 2023]
+rule create_folders:
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC5_S37_aln.sam
+    jobid: 2
+    reason: Missing output files: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC5_S37_aln.sam
+    wildcards: prefix=bam/7G8-PC5_S37_aln.sam
+    resources: tmpdir=/tmp
+
+
+[Tue Sep  5 08:51:56 2023]
+rule create_folders:
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC6_S219_aln.sam
+    jobid: 3
+    reason: Missing output files: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC6_S219_aln.sam
+    wildcards: prefix=bam/7G8-PC6_S219_aln.sam
+    resources: tmpdir=/tmp
+
+
+[Tue Sep  5 08:51:56 2023]
+rule create_folders:
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC1_S89_aln.sam
+    jobid: 4
+    reason: Missing output files: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC1_S89_aln.sam
+    wildcards: prefix=bam/D6-PC1_S89_aln.sam
+    resources: tmpdir=/tmp
+
+
+[Tue Sep  5 08:51:56 2023]
+rule create_folders:
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC2_S35_aln.sam
+    jobid: 5
+    reason: Missing output files: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC2_S35_aln.sam
+    wildcards: prefix=bam/D6-PC2_S35_aln.sam
+    resources: tmpdir=/tmp
+
+
+[Tue Sep  5 08:51:56 2023]
+rule create_folders:
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218_aln.sam
+    jobid: 6
+    reason: Missing output files: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218_aln.sam
+    wildcards: prefix=bam/D6-PC3_S218_aln.sam
+    resources: tmpdir=/tmp
+
+[Tue Sep  5 08:51:56 2023]
+Finished job 1.
+1 of 7 steps (14%) done
+[Tue Sep  5 08:51:56 2023]
+Finished job 2.
+2 of 7 steps (29%) done
+[Tue Sep  5 08:51:56 2023]
+Finished job 3.
+3 of 7 steps (43%) done
+[Tue Sep  5 08:51:56 2023]
+Finished job 5.
+4 of 7 steps (57%) done
+[Tue Sep  5 08:51:56 2023]
+Finished job 4.
+5 of 7 steps (71%) done
+[Tue Sep  5 08:51:56 2023]
+Finished job 6.
+6 of 7 steps (86%) done
+Select jobs to execute...
+
+[Tue Sep  5 08:51:56 2023]
+localrule all:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC4_S90_aln.sam, /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC5_S37_aln.sam, /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC6_S219_aln.sam, /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC1_S89_aln.sam, /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC2_S35_aln.sam, /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218_aln.sam
+    jobid: 0
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC5_S37_aln.sam, /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC6_S219_aln.sam, /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC4_S90_aln.sam, /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC1_S89_aln.sam, /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC2_S35_aln.sam, /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218_aln.sam
+    resources: tmpdir=/tmp
+
+[Tue Sep  5 08:51:56 2023]
+Finished job 0.
+7 of 7 steps (100%) done
+Complete log: .snakemake/log/2023-09-05T085154.285717.snakemake.log

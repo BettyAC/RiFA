@@ -1,0 +1,10 @@
+Building DAG of jobs...
+MissingInputException in line 13 of /mnt/data/bioinfoteam/Betty/malpipeline/snake/snakefile:
+Missing input files for rule all:
+    affected files:
+        /mnt/data/bioinfoteam/Betty/malpipeline/results/ann/D6-PC2_S35.ann
+        /mnt/data/bioinfoteam/Betty/malpipeline/results/ann/7G8-PC4_S90.ann
+        /mnt/data/bioinfoteam/Betty/malpipeline/results/ann/D6-PC3_S218.ann
+        /mnt/data/bioinfoteam/Betty/malpipeline/results/ann/D6-PC1_S89.ann
+        /mnt/data/bioinfoteam/Betty/malpipeline/results/ann/7G8-PC6_S219.ann
+        /mnt/data/bioinfoteam/Betty/malpipeline/results/ann/7G8-PC5_S37.ann

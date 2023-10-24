@@ -1,0 +1,8 @@
+Building DAG of jobs...
+MissingInputException in line 17 of /mnt/data/bioinfoteam/Betty/malpipeline/snake/snakefile:
+Missing input files for rule bbduk:
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_a_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_a_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_a_stats.txt
+    wildcards: sample=7G8-PC4_S90_a
+    affected files:
+        /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC4_S90_a_R1_001.fastq.gz
+        /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC4_S90_a_R2_001.fastq.gz

@@ -1,0 +1,2 @@
+SyntaxError in line 118 of /mnt/data/bioinfoteam/Betty/malpipeline/snake/snakefile:
+Unexpected keyword env in rule definition (snakefile, line 118)

@@ -1,0 +1,2 @@
+SyntaxError in line 165 of /mnt/data/bioinfoteam/Betty/malpipeline/snake/snakefile:
+Multiple run or shell keywords in rule extract_snpeff_info. (snakefile, line 165)

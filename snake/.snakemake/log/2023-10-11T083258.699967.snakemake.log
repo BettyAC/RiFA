@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in line 134 of /mnt/data/bioinfoteam/Betty/malpipeline/snake/snakefile:
+Missing input files for rule annotate:
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/7G8-PC4_S90.ann
+    wildcards: sample=7G8-PC4_S90
+    affected files:
+        Plasmodium_falciparum_3

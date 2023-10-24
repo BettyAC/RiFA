@@ -1,0 +1,718 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count    min threads    max threads
+-------------  -------  -------------  -------------
+all                  1              1              1
+annotate             6              1              1
+bbduk                6              1              1
+bowtie               6              1              1
+call_vcf             6              1              1
+liftover             6              1              1
+samtools_sort        6              1              1
+tobam                6              1              1
+total               43              1              1
+
+Select jobs to execute...
+
+[Wed Oct 18 04:33:27 2023]
+rule bbduk:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC3_S218_R1_001.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC3_S218_R2_001.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_stats.txt
+    jobid: 42
+    reason: Forced execution
+    wildcards: sample=D6-PC3_S218
+    resources: tmpdir=/tmp
+
+/mnt/data/bioinfoteam/Betty/anaconda3b/envs/mala/bin/bbduk.sh    trimq=20 maq=20 minlength=100  ordered=t  in=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC3_S218_R1_001.fastq.gz in2=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC3_S218_R2_001.fastq.gz out=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_R1_trimmed.fastq.gz out2=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_R2_trimmed.fastq.gz stats=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_stats.txt
+
+[Wed Oct 18 04:33:33 2023]
+rule bbduk:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC2_S35_R1_001.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC2_S35_R2_001.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_stats.txt
+    jobid: 35
+    reason: Forced execution
+    wildcards: sample=D6-PC2_S35
+    resources: tmpdir=/tmp
+
+/mnt/data/bioinfoteam/Betty/anaconda3b/envs/mala/bin/bbduk.sh    trimq=20 maq=20 minlength=100  ordered=t  in=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC2_S35_R1_001.fastq.gz in2=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC2_S35_R2_001.fastq.gz out=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R1_trimmed.fastq.gz out2=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R2_trimmed.fastq.gz stats=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_stats.txt
+
+[Wed Oct 18 04:33:33 2023]
+rule bbduk:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC1_S89_R1_001.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC1_S89_R2_001.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_stats.txt
+    jobid: 28
+    reason: Forced execution
+    wildcards: sample=D6-PC1_S89
+    resources: tmpdir=/tmp
+
+/mnt/data/bioinfoteam/Betty/anaconda3b/envs/mala/bin/bbduk.sh    trimq=20 maq=20 minlength=100  ordered=t  in=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC1_S89_R1_001.fastq.gz in2=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/D6-PC1_S89_R2_001.fastq.gz out=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_R1_trimmed.fastq.gz out2=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_R2_trimmed.fastq.gz stats=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_stats.txt
+
+[Wed Oct 18 04:33:33 2023]
+rule bbduk:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC6_S219_R1_001.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC6_S219_R2_001.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_stats.txt
+    jobid: 21
+    reason: Forced execution
+    wildcards: sample=7G8-PC6_S219
+    resources: tmpdir=/tmp
+
+/mnt/data/bioinfoteam/Betty/anaconda3b/envs/mala/bin/bbduk.sh    trimq=20 maq=20 minlength=100  ordered=t  in=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC6_S219_R1_001.fastq.gz in2=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC6_S219_R2_001.fastq.gz out=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R1_trimmed.fastq.gz out2=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R2_trimmed.fastq.gz stats=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_stats.txt
+
+[Wed Oct 18 04:33:33 2023]
+rule bbduk:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC5_S37_R1_001.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC5_S37_R2_001.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_stats.txt
+    jobid: 14
+    reason: Forced execution
+    wildcards: sample=7G8-PC5_S37
+    resources: tmpdir=/tmp
+
+/mnt/data/bioinfoteam/Betty/anaconda3b/envs/mala/bin/bbduk.sh    trimq=20 maq=20 minlength=100  ordered=t  in=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC5_S37_R1_001.fastq.gz in2=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC5_S37_R2_001.fastq.gz out=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_R1_trimmed.fastq.gz out2=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_R2_trimmed.fastq.gz stats=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_stats.txt
+
+[Wed Oct 18 04:33:34 2023]
+rule bbduk:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC4_S90_R1_001.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC4_S90_R2_001.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_stats.txt
+    jobid: 7
+    reason: Forced execution
+    wildcards: sample=7G8-PC4_S90
+    resources: tmpdir=/tmp
+
+/mnt/data/bioinfoteam/Betty/anaconda3b/envs/mala/bin/bbduk.sh    trimq=20 maq=20 minlength=100  ordered=t  in=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC4_S90_R1_001.fastq.gz in2=/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/7G8-PC4_S90_R2_001.fastq.gz out=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R1_trimmed.fastq.gz out2=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R2_trimmed.fastq.gz stats=/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_stats.txt
+[Wed Oct 18 04:33:36 2023]
+Finished job 42.
+1 of 43 steps (2%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:33:36 2023]
+rule bowtie:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_R2_trimmed.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218_aln.sam
+    jobid: 41
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_R2_trimmed.fastq.gz
+    wildcards: sample=D6-PC3_S218
+    resources: tmpdir=/tmp
+
+ bowtie2 --very-sensitive  --end-to-end   -x /mnt/data/bioinfoteam/Betty/malpipeline/data/reference/refs_all_index -1 /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_R1_trimmed.fastq.gz -2 /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC3_S218_R2_trimmed.fastq.gz -p 8 -S /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218_aln.sam
+[Wed Oct 18 04:33:38 2023]
+Finished job 7.
+2 of 43 steps (5%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:33:38 2023]
+rule bowtie:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R2_trimmed.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC4_S90_aln.sam
+    jobid: 6
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R1_trimmed.fastq.gz
+    wildcards: sample=7G8-PC4_S90
+    resources: tmpdir=/tmp
+
+ bowtie2 --very-sensitive  --end-to-end   -x /mnt/data/bioinfoteam/Betty/malpipeline/data/reference/refs_all_index -1 /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R1_trimmed.fastq.gz -2 /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC4_S90_R2_trimmed.fastq.gz -p 8 -S /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC4_S90_aln.sam
+[Wed Oct 18 04:33:39 2023]
+Finished job 28.
+3 of 43 steps (7%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:33:39 2023]
+rule bowtie:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_R2_trimmed.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC1_S89_aln.sam
+    jobid: 27
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_R1_trimmed.fastq.gz
+    wildcards: sample=D6-PC1_S89
+    resources: tmpdir=/tmp
+
+ bowtie2 --very-sensitive  --end-to-end   -x /mnt/data/bioinfoteam/Betty/malpipeline/data/reference/refs_all_index -1 /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_R1_trimmed.fastq.gz -2 /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC1_S89_R2_trimmed.fastq.gz -p 8 -S /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC1_S89_aln.sam
+[Wed Oct 18 04:33:41 2023]
+Finished job 41.
+4 of 43 steps (9%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:33:41 2023]
+rule tobam:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218_aln.sam
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218_aln.bam
+    jobid: 40
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218_aln.sam
+    wildcards: sample=D6-PC3_S218
+    resources: tmpdir=/tmp
+
+samtools view -b /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218_aln.sam -o /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218_aln.bam
+[Wed Oct 18 04:33:42 2023]
+Finished job 21.
+5 of 43 steps (12%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:33:42 2023]
+rule bowtie:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R2_trimmed.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC6_S219_aln.sam
+    jobid: 20
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R2_trimmed.fastq.gz
+    wildcards: sample=7G8-PC6_S219
+    resources: tmpdir=/tmp
+
+ bowtie2 --very-sensitive  --end-to-end   -x /mnt/data/bioinfoteam/Betty/malpipeline/data/reference/refs_all_index -1 /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R1_trimmed.fastq.gz -2 /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC6_S219_R2_trimmed.fastq.gz -p 8 -S /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC6_S219_aln.sam
+[Wed Oct 18 04:33:42 2023]
+Finished job 35.
+6 of 43 steps (14%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:33:42 2023]
+rule bowtie:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R2_trimmed.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC2_S35_aln.sam
+    jobid: 34
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R2_trimmed.fastq.gz
+    wildcards: sample=D6-PC2_S35
+    resources: tmpdir=/tmp
+
+ bowtie2 --very-sensitive  --end-to-end   -x /mnt/data/bioinfoteam/Betty/malpipeline/data/reference/refs_all_index -1 /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R1_trimmed.fastq.gz -2 /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/D6-PC2_S35_R2_trimmed.fastq.gz -p 8 -S /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC2_S35_aln.sam
+[Wed Oct 18 04:33:42 2023]
+Finished job 40.
+7 of 43 steps (16%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:33:42 2023]
+rule samtools_sort:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218_aln.bam
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218.sorted.bam
+    jobid: 39
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218_aln.bam
+    wildcards: sample=D6-PC3_S218
+    resources: tmpdir=/tmp
+
+samtools sort /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218_aln.bam -o /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218.sorted.bam
+[Wed Oct 18 04:33:43 2023]
+Finished job 39.
+8 of 43 steps (19%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:33:43 2023]
+rule call_vcf:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218.sorted.bam
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC3_S218.vcf
+    jobid: 38
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218.sorted.bam
+    wildcards: sample=D6-PC3_S218
+    resources: tmpdir=/tmp
+
+bcftools mpileup  -f /mnt/data/bioinfoteam/Betty/malpipeline/data/reference/malref6.fasta  /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC3_S218.sorted.bam | bcftools call -vm > /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC3_S218.vcf
+[Wed Oct 18 04:33:44 2023]
+Finished job 38.
+9 of 43 steps (21%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:33:44 2023]
+rule liftover:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC3_S218.vcf
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/aD6-PC3_S218.vcf
+    jobid: 37
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC3_S218.vcf
+    wildcards: sample=D6-PC3_S218
+    resources: tmpdir=/tmp
+
+
+        sed -i 's;PfMDR1;5;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC3_S218.vcf
+        sed -i 's;K13;13;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC3_S218.vcf
+        sed -i 's;DHFR;4;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC3_S218.vcf
+        sed -i 's;DHPS;8;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC3_S218.vcf
+        sed -i 's;PfCRT;7;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC3_S218.vcf
+        python /mnt/data/bioinfoteam/Betty/scripts/adjust2.py /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC3_S218.vcf > /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/aD6-PC3_S218.vcf 
+        
+[Wed Oct 18 04:33:44 2023]
+Finished job 37.
+10 of 43 steps (23%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:33:44 2023]
+rule annotate:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/aD6-PC3_S218.vcf, /mnt/data/bioinfoteam/Betty/snpEff/snpEff.jar, /mnt/data/bioinfoteam/Betty/snpEff/data/Plasmodium_falciparum_3, /mnt/data/bioinfoteam/Betty/snpEff/custom.config, /mnt/data/bioinfoteam/Betty/snpEff/data, /mnt/data/bioinfoteam/Betty/malpipeline/results/pwd.txt
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/D6-PC3_S218.ann
+    jobid: 36
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/aD6-PC3_S218.vcf
+    wildcards: sample=D6-PC3_S218
+    resources: tmpdir=/tmp
+
+
+       cd  /mnt/data/bioinfoteam/Betty/snpEff
+       java -Djava.io.tmpdir=/mnt/data/bioinfoteam/Betty/tmpall/ -Xmx20G -jar /mnt/data/bioinfoteam/Betty/snpEff/snpEff.jar -c /mnt/data/bioinfoteam/Betty/snpEff/custom.config  Plasmodium_falciparum_3  -debug  /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/aD6-PC3_S218.vcf > /mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/D6-PC3_S218.ann
+       cd  /mnt/data/bioinfoteam/Betty/malpipeline/snake
+       
+[Wed Oct 18 04:33:53 2023]
+Finished job 14.
+11 of 43 steps (26%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:33:53 2023]
+rule bowtie:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_R1_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_R2_trimmed.fastq.gz
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC5_S37_aln.sam
+    jobid: 13
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_R2_trimmed.fastq.gz, /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_R1_trimmed.fastq.gz
+    wildcards: sample=7G8-PC5_S37
+    resources: tmpdir=/tmp
+
+ bowtie2 --very-sensitive  --end-to-end   -x /mnt/data/bioinfoteam/Betty/malpipeline/data/reference/refs_all_index -1 /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_R1_trimmed.fastq.gz -2 /mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/7G8-PC5_S37_R2_trimmed.fastq.gz -p 8 -S /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC5_S37_aln.sam
+[Wed Oct 18 04:33:53 2023]
+Finished job 27.
+12 of 43 steps (28%) done
+[Wed Oct 18 04:33:53 2023]
+Finished job 6.
+13 of 43 steps (30%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:33:53 2023]
+rule tobam:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC4_S90_aln.sam
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC4_S90_aln.bam
+    jobid: 5
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC4_S90_aln.sam
+    wildcards: sample=7G8-PC4_S90
+    resources: tmpdir=/tmp
+
+samtools view -b /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC4_S90_aln.sam -o /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC4_S90_aln.bam
+
+[Wed Oct 18 04:33:53 2023]
+rule tobam:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC1_S89_aln.sam
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC1_S89_aln.bam
+    jobid: 26
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC1_S89_aln.sam
+    wildcards: sample=D6-PC1_S89
+    resources: tmpdir=/tmp
+
+samtools view -b /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC1_S89_aln.sam -o /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC1_S89_aln.bam
+[Wed Oct 18 04:33:57 2023]
+Finished job 5.
+14 of 43 steps (33%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:33:57 2023]
+rule samtools_sort:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC4_S90_aln.bam
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC4_S90.sorted.bam
+    jobid: 4
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC4_S90_aln.bam
+    wildcards: sample=7G8-PC4_S90
+    resources: tmpdir=/tmp
+
+samtools sort /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC4_S90_aln.bam -o /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC4_S90.sorted.bam
+[Wed Oct 18 04:33:59 2023]
+Finished job 36.
+15 of 43 steps (35%) done
+[Wed Oct 18 04:34:05 2023]
+Finished job 26.
+16 of 43 steps (37%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:34:06 2023]
+rule samtools_sort:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC1_S89_aln.bam
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC1_S89.sorted.bam
+    jobid: 25
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC1_S89_aln.bam
+    wildcards: sample=D6-PC1_S89
+    resources: tmpdir=/tmp
+
+samtools sort /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC1_S89_aln.bam -o /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC1_S89.sorted.bam
+[Wed Oct 18 04:34:09 2023]
+Finished job 4.
+17 of 43 steps (40%) done
+[Wed Oct 18 04:34:09 2023]
+Finished job 20.
+18 of 43 steps (42%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:34:09 2023]
+rule call_vcf:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC4_S90.sorted.bam
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC4_S90.vcf
+    jobid: 3
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC4_S90.sorted.bam
+    wildcards: sample=7G8-PC4_S90
+    resources: tmpdir=/tmp
+
+bcftools mpileup  -f /mnt/data/bioinfoteam/Betty/malpipeline/data/reference/malref6.fasta  /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC4_S90.sorted.bam | bcftools call -vm > /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC4_S90.vcf
+
+[Wed Oct 18 04:34:09 2023]
+rule tobam:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC6_S219_aln.sam
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC6_S219_aln.bam
+    jobid: 19
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC6_S219_aln.sam
+    wildcards: sample=7G8-PC6_S219
+    resources: tmpdir=/tmp
+
+samtools view -b /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC6_S219_aln.sam -o /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC6_S219_aln.bam
+[Wed Oct 18 04:34:10 2023]
+Finished job 34.
+19 of 43 steps (44%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:34:10 2023]
+rule tobam:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC2_S35_aln.sam
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC2_S35_aln.bam
+    jobid: 33
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC2_S35_aln.sam
+    wildcards: sample=D6-PC2_S35
+    resources: tmpdir=/tmp
+
+samtools view -b /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC2_S35_aln.sam -o /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC2_S35_aln.bam
+[Wed Oct 18 04:34:15 2023]
+Finished job 3.
+20 of 43 steps (47%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:34:16 2023]
+rule liftover:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC4_S90.vcf
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/a7G8-PC4_S90.vcf
+    jobid: 2
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC4_S90.vcf
+    wildcards: sample=7G8-PC4_S90
+    resources: tmpdir=/tmp
+
+
+        sed -i 's;PfMDR1;5;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC4_S90.vcf
+        sed -i 's;K13;13;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC4_S90.vcf
+        sed -i 's;DHFR;4;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC4_S90.vcf
+        sed -i 's;DHPS;8;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC4_S90.vcf
+        sed -i 's;PfCRT;7;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC4_S90.vcf
+        python /mnt/data/bioinfoteam/Betty/scripts/adjust2.py /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC4_S90.vcf > /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/a7G8-PC4_S90.vcf 
+        
+[Wed Oct 18 04:34:18 2023]
+Finished job 25.
+21 of 43 steps (49%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:34:18 2023]
+rule call_vcf:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC1_S89.sorted.bam
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC1_S89.vcf
+    jobid: 24
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC1_S89.sorted.bam
+    wildcards: sample=D6-PC1_S89
+    resources: tmpdir=/tmp
+
+bcftools mpileup  -f /mnt/data/bioinfoteam/Betty/malpipeline/data/reference/malref6.fasta  /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC1_S89.sorted.bam | bcftools call -vm > /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC1_S89.vcf
+[Wed Oct 18 04:34:18 2023]
+Finished job 19.
+22 of 43 steps (51%) done
+[Wed Oct 18 04:34:18 2023]
+Finished job 33.
+23 of 43 steps (53%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:34:19 2023]
+rule samtools_sort:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC2_S35_aln.bam
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC2_S35.sorted.bam
+    jobid: 32
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC2_S35_aln.bam
+    wildcards: sample=D6-PC2_S35
+    resources: tmpdir=/tmp
+
+samtools sort /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC2_S35_aln.bam -o /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC2_S35.sorted.bam
+
+[Wed Oct 18 04:34:19 2023]
+rule samtools_sort:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC6_S219_aln.bam
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC6_S219.sorted.bam
+    jobid: 18
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC6_S219_aln.bam
+    wildcards: sample=7G8-PC6_S219
+    resources: tmpdir=/tmp
+
+samtools sort /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC6_S219_aln.bam -o /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC6_S219.sorted.bam
+[Wed Oct 18 04:34:20 2023]
+Finished job 24.
+24 of 43 steps (56%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:34:20 2023]
+rule liftover:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC1_S89.vcf
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/aD6-PC1_S89.vcf
+    jobid: 23
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC1_S89.vcf
+    wildcards: sample=D6-PC1_S89
+    resources: tmpdir=/tmp
+
+
+        sed -i 's;PfMDR1;5;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC1_S89.vcf
+        sed -i 's;K13;13;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC1_S89.vcf
+        sed -i 's;DHFR;4;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC1_S89.vcf
+        sed -i 's;DHPS;8;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC1_S89.vcf
+        sed -i 's;PfCRT;7;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC1_S89.vcf
+        python /mnt/data/bioinfoteam/Betty/scripts/adjust2.py /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC1_S89.vcf > /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/aD6-PC1_S89.vcf 
+        
+[Wed Oct 18 04:34:20 2023]
+Finished job 2.
+25 of 43 steps (58%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:34:20 2023]
+rule annotate:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/a7G8-PC4_S90.vcf, /mnt/data/bioinfoteam/Betty/snpEff/snpEff.jar, /mnt/data/bioinfoteam/Betty/snpEff/data/Plasmodium_falciparum_3, /mnt/data/bioinfoteam/Betty/snpEff/custom.config, /mnt/data/bioinfoteam/Betty/snpEff/data, /mnt/data/bioinfoteam/Betty/malpipeline/results/pwd.txt
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/7G8-PC4_S90.ann
+    jobid: 1
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/a7G8-PC4_S90.vcf
+    wildcards: sample=7G8-PC4_S90
+    resources: tmpdir=/tmp
+
+
+       cd  /mnt/data/bioinfoteam/Betty/snpEff
+       java -Djava.io.tmpdir=/mnt/data/bioinfoteam/Betty/tmpall/ -Xmx20G -jar /mnt/data/bioinfoteam/Betty/snpEff/snpEff.jar -c /mnt/data/bioinfoteam/Betty/snpEff/custom.config  Plasmodium_falciparum_3  -debug  /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/a7G8-PC4_S90.vcf > /mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/7G8-PC4_S90.ann
+       cd  /mnt/data/bioinfoteam/Betty/malpipeline/snake
+       
+[Wed Oct 18 04:34:20 2023]
+Finished job 23.
+26 of 43 steps (60%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:34:20 2023]
+rule annotate:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/aD6-PC1_S89.vcf, /mnt/data/bioinfoteam/Betty/snpEff/snpEff.jar, /mnt/data/bioinfoteam/Betty/snpEff/data/Plasmodium_falciparum_3, /mnt/data/bioinfoteam/Betty/snpEff/custom.config, /mnt/data/bioinfoteam/Betty/snpEff/data, /mnt/data/bioinfoteam/Betty/malpipeline/results/pwd.txt
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/D6-PC1_S89.ann
+    jobid: 22
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/aD6-PC1_S89.vcf
+    wildcards: sample=D6-PC1_S89
+    resources: tmpdir=/tmp
+
+
+       cd  /mnt/data/bioinfoteam/Betty/snpEff
+       java -Djava.io.tmpdir=/mnt/data/bioinfoteam/Betty/tmpall/ -Xmx20G -jar /mnt/data/bioinfoteam/Betty/snpEff/snpEff.jar -c /mnt/data/bioinfoteam/Betty/snpEff/custom.config  Plasmodium_falciparum_3  -debug  /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/aD6-PC1_S89.vcf > /mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/D6-PC1_S89.ann
+       cd  /mnt/data/bioinfoteam/Betty/malpipeline/snake
+       
+[Wed Oct 18 04:34:23 2023]
+Finished job 1.
+27 of 43 steps (63%) done
+[Wed Oct 18 04:34:23 2023]
+Finished job 22.
+28 of 43 steps (65%) done
+[Wed Oct 18 04:34:33 2023]
+Finished job 32.
+29 of 43 steps (67%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:34:35 2023]
+rule call_vcf:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC2_S35.sorted.bam
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC2_S35.vcf
+    jobid: 31
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC2_S35.sorted.bam
+    wildcards: sample=D6-PC2_S35
+    resources: tmpdir=/tmp
+
+bcftools mpileup  -f /mnt/data/bioinfoteam/Betty/malpipeline/data/reference/malref6.fasta  /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/D6-PC2_S35.sorted.bam | bcftools call -vm > /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC2_S35.vcf
+[Wed Oct 18 04:34:35 2023]
+Finished job 18.
+30 of 43 steps (70%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:34:35 2023]
+rule call_vcf:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC6_S219.sorted.bam
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC6_S219.vcf
+    jobid: 17
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC6_S219.sorted.bam
+    wildcards: sample=7G8-PC6_S219
+    resources: tmpdir=/tmp
+
+bcftools mpileup  -f /mnt/data/bioinfoteam/Betty/malpipeline/data/reference/malref6.fasta  /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC6_S219.sorted.bam | bcftools call -vm > /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC6_S219.vcf
+[Wed Oct 18 04:34:36 2023]
+Finished job 31.
+31 of 43 steps (72%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:34:36 2023]
+rule liftover:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC2_S35.vcf
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/aD6-PC2_S35.vcf
+    jobid: 30
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC2_S35.vcf
+    wildcards: sample=D6-PC2_S35
+    resources: tmpdir=/tmp
+
+
+        sed -i 's;PfMDR1;5;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC2_S35.vcf
+        sed -i 's;K13;13;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC2_S35.vcf
+        sed -i 's;DHFR;4;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC2_S35.vcf
+        sed -i 's;DHPS;8;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC2_S35.vcf
+        sed -i 's;PfCRT;7;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC2_S35.vcf
+        python /mnt/data/bioinfoteam/Betty/scripts/adjust2.py /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/D6-PC2_S35.vcf > /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/aD6-PC2_S35.vcf 
+        
+[Wed Oct 18 04:34:36 2023]
+Finished job 17.
+32 of 43 steps (74%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:34:36 2023]
+rule liftover:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC6_S219.vcf
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/a7G8-PC6_S219.vcf
+    jobid: 16
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC6_S219.vcf
+    wildcards: sample=7G8-PC6_S219
+    resources: tmpdir=/tmp
+
+
+        sed -i 's;PfMDR1;5;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC6_S219.vcf
+        sed -i 's;K13;13;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC6_S219.vcf
+        sed -i 's;DHFR;4;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC6_S219.vcf
+        sed -i 's;DHPS;8;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC6_S219.vcf
+        sed -i 's;PfCRT;7;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC6_S219.vcf
+        python /mnt/data/bioinfoteam/Betty/scripts/adjust2.py /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC6_S219.vcf > /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/a7G8-PC6_S219.vcf 
+        
+[Wed Oct 18 04:34:37 2023]
+Finished job 16.
+33 of 43 steps (77%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:34:37 2023]
+rule annotate:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/a7G8-PC6_S219.vcf, /mnt/data/bioinfoteam/Betty/snpEff/snpEff.jar, /mnt/data/bioinfoteam/Betty/snpEff/data/Plasmodium_falciparum_3, /mnt/data/bioinfoteam/Betty/snpEff/custom.config, /mnt/data/bioinfoteam/Betty/snpEff/data, /mnt/data/bioinfoteam/Betty/malpipeline/results/pwd.txt
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/7G8-PC6_S219.ann
+    jobid: 15
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/a7G8-PC6_S219.vcf
+    wildcards: sample=7G8-PC6_S219
+    resources: tmpdir=/tmp
+
+
+       cd  /mnt/data/bioinfoteam/Betty/snpEff
+       java -Djava.io.tmpdir=/mnt/data/bioinfoteam/Betty/tmpall/ -Xmx20G -jar /mnt/data/bioinfoteam/Betty/snpEff/snpEff.jar -c /mnt/data/bioinfoteam/Betty/snpEff/custom.config  Plasmodium_falciparum_3  -debug  /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/a7G8-PC6_S219.vcf > /mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/7G8-PC6_S219.ann
+       cd  /mnt/data/bioinfoteam/Betty/malpipeline/snake
+       
+[Wed Oct 18 04:34:37 2023]
+Finished job 30.
+34 of 43 steps (79%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:34:37 2023]
+rule annotate:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/aD6-PC2_S35.vcf, /mnt/data/bioinfoteam/Betty/snpEff/snpEff.jar, /mnt/data/bioinfoteam/Betty/snpEff/data/Plasmodium_falciparum_3, /mnt/data/bioinfoteam/Betty/snpEff/custom.config, /mnt/data/bioinfoteam/Betty/snpEff/data, /mnt/data/bioinfoteam/Betty/malpipeline/results/pwd.txt
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/D6-PC2_S35.ann
+    jobid: 29
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/aD6-PC2_S35.vcf
+    wildcards: sample=D6-PC2_S35
+    resources: tmpdir=/tmp
+
+
+       cd  /mnt/data/bioinfoteam/Betty/snpEff
+       java -Djava.io.tmpdir=/mnt/data/bioinfoteam/Betty/tmpall/ -Xmx20G -jar /mnt/data/bioinfoteam/Betty/snpEff/snpEff.jar -c /mnt/data/bioinfoteam/Betty/snpEff/custom.config  Plasmodium_falciparum_3  -debug  /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/aD6-PC2_S35.vcf > /mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/D6-PC2_S35.ann
+       cd  /mnt/data/bioinfoteam/Betty/malpipeline/snake
+       
+[Wed Oct 18 04:34:42 2023]
+Finished job 13.
+35 of 43 steps (81%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:34:42 2023]
+rule tobam:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC5_S37_aln.sam
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC5_S37_aln.bam
+    jobid: 12
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC5_S37_aln.sam
+    wildcards: sample=7G8-PC5_S37
+    resources: tmpdir=/tmp
+
+samtools view -b /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC5_S37_aln.sam -o /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC5_S37_aln.bam
+[Wed Oct 18 04:34:43 2023]
+Finished job 29.
+36 of 43 steps (84%) done
+[Wed Oct 18 04:34:43 2023]
+Finished job 15.
+37 of 43 steps (86%) done
+[Wed Oct 18 04:35:00 2023]
+Finished job 12.
+38 of 43 steps (88%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:35:00 2023]
+rule samtools_sort:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC5_S37_aln.bam
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC5_S37.sorted.bam
+    jobid: 11
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC5_S37_aln.bam
+    wildcards: sample=7G8-PC5_S37
+    resources: tmpdir=/tmp
+
+samtools sort /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC5_S37_aln.bam -o /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC5_S37.sorted.bam
+[Wed Oct 18 04:35:24 2023]
+Finished job 11.
+39 of 43 steps (91%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:35:24 2023]
+rule call_vcf:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC5_S37.sorted.bam
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC5_S37.vcf
+    jobid: 10
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC5_S37.sorted.bam
+    wildcards: sample=7G8-PC5_S37
+    resources: tmpdir=/tmp
+
+bcftools mpileup  -f /mnt/data/bioinfoteam/Betty/malpipeline/data/reference/malref6.fasta  /mnt/data/bioinfoteam/Betty/malpipeline/results/bam/7G8-PC5_S37.sorted.bam | bcftools call -vm > /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC5_S37.vcf
+[Wed Oct 18 04:35:27 2023]
+Finished job 10.
+40 of 43 steps (93%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:35:27 2023]
+rule liftover:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC5_S37.vcf
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/a7G8-PC5_S37.vcf
+    jobid: 9
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC5_S37.vcf
+    wildcards: sample=7G8-PC5_S37
+    resources: tmpdir=/tmp
+
+
+        sed -i 's;PfMDR1;5;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC5_S37.vcf
+        sed -i 's;K13;13;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC5_S37.vcf
+        sed -i 's;DHFR;4;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC5_S37.vcf
+        sed -i 's;DHPS;8;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC5_S37.vcf
+        sed -i 's;PfCRT;7;'g /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC5_S37.vcf
+        python /mnt/data/bioinfoteam/Betty/scripts/adjust2.py /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/7G8-PC5_S37.vcf > /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/a7G8-PC5_S37.vcf 
+        
+[Wed Oct 18 04:35:27 2023]
+Finished job 9.
+41 of 43 steps (95%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:35:27 2023]
+rule annotate:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/a7G8-PC5_S37.vcf, /mnt/data/bioinfoteam/Betty/snpEff/snpEff.jar, /mnt/data/bioinfoteam/Betty/snpEff/data/Plasmodium_falciparum_3, /mnt/data/bioinfoteam/Betty/snpEff/custom.config, /mnt/data/bioinfoteam/Betty/snpEff/data, /mnt/data/bioinfoteam/Betty/malpipeline/results/pwd.txt
+    output: /mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/7G8-PC5_S37.ann
+    jobid: 8
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/a7G8-PC5_S37.vcf
+    wildcards: sample=7G8-PC5_S37
+    resources: tmpdir=/tmp
+
+
+       cd  /mnt/data/bioinfoteam/Betty/snpEff
+       java -Djava.io.tmpdir=/mnt/data/bioinfoteam/Betty/tmpall/ -Xmx20G -jar /mnt/data/bioinfoteam/Betty/snpEff/snpEff.jar -c /mnt/data/bioinfoteam/Betty/snpEff/custom.config  Plasmodium_falciparum_3  -debug  /mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/a7G8-PC5_S37.vcf > /mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/7G8-PC5_S37.ann
+       cd  /mnt/data/bioinfoteam/Betty/malpipeline/snake
+       
+[Wed Oct 18 04:35:30 2023]
+Finished job 8.
+42 of 43 steps (98%) done
+Select jobs to execute...
+
+[Wed Oct 18 04:35:30 2023]
+localrule all:
+    input: /mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/7G8-PC4_S90.ann, /mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/7G8-PC5_S37.ann, /mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/7G8-PC6_S219.ann, /mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/D6-PC1_S89.ann, /mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/D6-PC2_S35.ann, /mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/D6-PC3_S218.ann
+    jobid: 0
+    reason: Input files updated by another job: /mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/D6-PC2_S35.ann, /mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/D6-PC1_S89.ann, /mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/7G8-PC5_S37.ann, /mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/D6-PC3_S218.ann, /mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/7G8-PC4_S90.ann, /mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/7G8-PC6_S219.ann
+    resources: tmpdir=/tmp
+
+[Wed Oct 18 04:35:30 2023]
+Finished job 0.
+43 of 43 steps (100%) done
+Complete log: .snakemake/log/2023-10-18T043326.413505.snakemake.log

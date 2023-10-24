@@ -1,0 +1,2 @@
+reference_fasta: "/mnt/data/bioinfoteam/Betty/malpipeline/data/reference/malref6.fasta"
+prefix: "run_prefix"
