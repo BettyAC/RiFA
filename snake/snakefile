@@ -1,8 +1,8 @@
-configfile: "/mnt/data/bioinfoteam/Betty/malpipeline/data/config.yaml"
+configfile: "data/config.yaml"
 reference_fasta=config["reference_fasta"]
 #prefix=config["prefix"]
 
-(SAMPLES,)=glob_wildcards("/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/{sample}_R1_001.fastq.gz")
+(SAMPLES,)=glob_wildcards("data/fastq/{sample}_R1_001.fastq.gz")
 
 ruleorder: bbduk > bowtie > tobam > samtools_sort > index > call_vcf > liftover  > annotate > extract_snpeff_info
 
@@ -12,95 +12,95 @@ ruleorder: bbduk > bowtie > tobam > samtools_sort > index > call_vcf > liftover 
 
 rule all:
     input:
-        expand("/mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/{sample}.csv", sample=SAMPLES)
+        expand("results/ann/{sample}.csv", sample=SAMPLES)
 
 rule bbduk:
     input:
-        fwd="/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/{sample}_R1_001.fastq.gz",
-        rev="/mnt/data/bioinfoteam/Betty/malpipeline/data/fastq/{sample}_R2_001.fastq.gz"
+        fwd="data/fastq/{sample}_R1_001.fastq.gz",
+        rev="data/fastq/{sample}_R2_001.fastq.gz"
     output:
-        fwd="/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/{sample}_R1_trimmed.fastq.gz",
-        rev="/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/{sample}_R2_trimmed.fastq.gz",
-        stat="/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/{sample}_stats.txt"
+        fwd="results/trimmed/{sample}_R1_trimmed.fastq.gz",
+        rev="results/trimmed/{sample}_R2_trimmed.fastq.gz",
+        stat="results/trimmed/{sample}_stats.txt"
     shell:
-        "/mnt/data/bioinfoteam/Betty/anaconda3b/envs/mala/bin/bbduk.sh    trimq=20 maq=20 minlength=100  ordered=t  in={input.fwd} in2={input.rev} out={output.fwd} out2={output.rev} stats={output.stat}"
+        "./anaconda3b/envs/mala/bin/bbduk.sh    trimq=20 maq=20 minlength=100  ordered=t  in={input.fwd} in2={input.rev} out={output.fwd} out2={output.rev} stats={output.stat}"
 
 
 rule bowtie:
     input:
-        fwd="/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/{sample}_R1_trimmed.fastq.gz",
-        rev="/mnt/data/bioinfoteam/Betty/malpipeline/results/trimmed/{sample}_R2_trimmed.fastq.gz"
+        fwd="results/trimmed/{sample}_R1_trimmed.fastq.gz",
+        rev="results/trimmed/{sample}_R2_trimmed.fastq.gz"
     output:
-        "/mnt/data/bioinfoteam/Betty/malpipeline/results/bam/{sample}_aln.sam"
+        "results/bam/{sample}_aln.sam"
     shell:
         " bowtie2 --very-sensitive  --end-to-end   -x /mnt/data/bioinfoteam/Betty/malpipeline/data/reference/refs_all_index -1 {input.fwd} -2 {input.rev} -p 8 -S {output}"
 
 
 rule tobam:
     input:
-        "/mnt/data/bioinfoteam/Betty/malpipeline/results/bam/{sample}_aln.sam"
+        "results/bam/{sample}_aln.sam"
     output:
-        "/mnt/data/bioinfoteam/Betty/malpipeline/results/bam/{sample}_aln.bam"
+        "results/bam/{sample}_aln.bam"
     shell:
         "samtools view -b {input} -o {output}"
 
 
 rule samtools_sort:
     input:
-        "/mnt/data/bioinfoteam/Betty/malpipeline/results/bam/{sample}_aln.bam"
+        "results/bam/{sample}_aln.bam"
     output:
-        "/mnt/data/bioinfoteam/Betty/malpipeline/results/bam/{sample}.sorted.bam"
+        "results/bam/{sample}.sorted.bam"
     shell:
         "samtools sort {input} -o {output}"
 
 rule index:
     input:
-        "/mnt/data/bioinfoteam/Betty/malpipeline/results/bam/{sample}.sorted.bam"
+        results/bam/{sample}.sorted.bam"
     output:
-        "/mnt/data/bioinfoteam/Betty/malpipeline/results/bam/{sample}.sorted.bai"
+        "results/bam/{sample}.sorted.bai"
     shell:
         "samtools index {input}"
 
 rule pileup_and_cons:
     input:
-        "/mnt/data/bioinfoteam/Betty/malpipeline/results/bam/{sample}.sorted.bam"
+        "results/bam/{sample}.sorted.bam"
     output:
-        "/mnt/data/bioinfoteam/Betty/malpipeline/results/consensus/{sample}.fa"
+        "results/consensus/{sample}.fa"
     shell:
         "samtools mpileup  -A -d 8000 -B -Q 0 --reference {reference_fasta}  {input} | ivar consensus -p {output}"
 
 rule coverage:
     input:
-        "/mnt/data/bioinfoteam/Betty/malpipeline/results/bam/{sample}.sorted.bam"
+        results/bam/{sample}.sorted.bam"
     output:
-        "/mnt/data/bioinfoteam/Betty/malpipeline/results/stat/{sample}_coverage.txt"
+        "results/stat/{sample}_coverage.txt"
     shell:
         "samtools flagstat {input} "
 
 rule depth:
     input:
-        "/mnt/data/bioinfoteam/Betty/malpipeline/results/bam/{sample}.sorted.bam"
+        "results/bam/{sample}.sorted.bam"
     output:
-        "/mnt/data/bioinfoteam/Betty/malpipeline/results/stat/{sample}_depth.txt"
+        "results/stat/{sample}_depth.txt"
     shell:
         "samtools depth {input} | awk '{sum+=$3} END { print sum/NR }' "
 
 
 rule call_vcf:
     input:
-        "/mnt/data/bioinfoteam/Betty/malpipeline/results/bam/{sample}.sorted.bam"
+        "results/bam/{sample}.sorted.bam"
     output:
-        "/mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/{sample}.vcf"
+        "results/vcf/{sample}.vcf"
     shell:
         "bcftools mpileup  -f {reference_fasta}  {input} | bcftools call -vm > {output}"
 
 rule liftover:
     input:
-        "/mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/{sample}.vcf"
+        "results/vcf/{sample}.vcf"
     output:
-        "/mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/a{sample}.vcf"
+        "results/vcf/a{sample}.vcf"
     params:
-        script="/mnt/data/bioinfoteam/Betty/scripts/adjust2.py"
+        script="scripts/adjust2.py"
 
     shell:
         """
@@ -114,55 +114,55 @@ rule liftover:
 
 #rule build:
 #    input:
-#        vcf="/mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/a{sample}.vcf",
-#        snpeff_jar="/mnt/data/bioinfoteam/Betty/snpEff/snpEff.jar",
-#        snpeff_database="/mnt/data/bioinfoteam/Betty/snpEff/data/Plasmodium_falciparum_3",
-#        snpeff_config="/mnt/data/bioinfoteam/Betty/snpEff/custom.config",
-#        snpeff_datadir="/mnt/data/bioinfoteam/Betty/snpEff/data",
-#        pwd="/mnt/data/bioinfoteam/Betty/malpipeline/results/pwd.txt"
+#        vcf="results/vcf/a{sample}.vcf",
+#        snpeff_jar="snpEff/snpEff.jar",
+#        snpeff_database="snpEff/data/Plasmodium_falciparum_3",
+#        snpeff_config="snpEff/custom.config",
+#        snpeff_datadir="snpEff/data",
+#        pwd="results/pwd.txt"
 #    params:
-#        working_dir="/mnt/data/bioinfoteam/Betty/snpEff",
-#        snake_dir="/mnt/data/bioinfoteam/Betty/malpipeline/snake",
-#        tmp="/mnt/data/bioinfoteam/Betty/tmpall/"
+#        working_dir="snpEff",
+#        snake_dir="snake",
+#        tmp="tmp/"
 #   shell:
 #       """
 #       cd  {params.working_dir}
-#       java -Djava.io.tmpdir=/mnt/data/bioinfoteam/Betty/tmpall/  -Xmx20G -jar /mnt/data/bioinfoteam/Betty/snpEff/snpEff.jar build -genbank  -v Plasmodium_falciparum_3 -c custom.config
+#       java  -Xmx20G -jar snpEff/snpEff.jar build -genbank  -v Plasmodium_falciparum_3 -c custom.config
 #       cd  {params.snake_dir}
 #       """
 
 rule annotate:
     input:
-        vcf="/mnt/data/bioinfoteam/Betty/malpipeline/results/vcf/a{sample}.vcf",
-        snpeff_jar="/mnt/data/bioinfoteam/Betty/snpEff/snpEff.jar",
-        snpeff_database="/mnt/data/bioinfoteam/Betty/snpEff/data/Plasmodium_falciparum_3",
-        snpeff_config="/mnt/data/bioinfoteam/Betty/snpEff/custom.config",
-        snpeff_datadir="/mnt/data/bioinfoteam/Betty/snpEff/data",
-#       pwd="/mnt/data/bioinfoteam/Betty/malpipeline/results/pwd.txt"
+        vcf="results/vcf/a{sample}.vcf",
+        snpeff_jar="snpEff/snpEff.jar",
+        snpeff_database="snpEff/data/Plasmodium_falciparum_3",
+        snpeff_config="snpEff/custom.config",
+        snpeff_datadir="snpEff/data",
+#       pwd="results/pwd.txt"
     params:
-        working_dir="/mnt/data/bioinfoteam/Betty/snpEff",
-        snake_dir="/mnt/data/bioinfoteam/Betty/malpipeline/snake",
-        tmp="/mnt/data/bioinfoteam/Betty/tmpall/"
+        working_dir="snpEff",
+        snake_dir="snake",
+#       tmp="tmp/"
     output:
-        ann="/mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/{sample}.ann"
+        ann="results/ann/{sample}.ann"
     shell:
        """
        cd  {params.working_dir}
-       java -Djava.io.tmpdir=/mnt/data/bioinfoteam/Betty/tmpall/ -Xmx20G -jar /mnt/data/bioinfoteam/Betty/snpEff/snpEff.jar -c {input.snpeff_config}  Plasmodium_falciparum_3  -debug  {input.vcf} > {output}
+       java -Xmx20G -jar snpEff/snpEff.jar -c {input.snpeff_config}  Plasmodium_falciparum_3  -debug  {input.vcf} > {output}
        cd  {params.snake_dir}
        """
 
 rule extract_snpeff_info:
     input:
-#        expand("/mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/{sample}.ann", sample=SAMPLES)
-        ann="/mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/{sample}.ann"
+#        expand("results/ann/{sample}.ann", sample=SAMPLES)
+        ann="results/ann/{sample}.ann"
     output:
-        csv="/mnt/data/bioinfoteam/Betty/malpipeline/results/ann3/{sample}.csv"
+        csv="results/ann/{sample}.csv"
     params:
-        output_dir="/mnt/data/bioinfoteam/Betty/malpipeline/results/ann3"
+        output_dir="results/ann"
 #    script:
-#        "/mnt/data/bioinfoteam/Betty/malpipeline/scripts/anntocsv.py"
+#        "scripts/anntocsv.py"
     shell:
-        "python /mnt/data/bioinfoteam/Betty/malpipeline/scripts/anntocsv.py {input.ann} {output.csv}"
+        "python scripts/anntocsv.py {input.ann} {output.csv}"
 
 
