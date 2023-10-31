@@ -40,11 +40,12 @@ conda activate rifa
 ```bash
 snakemake --forceall  --use-conda --cores 8 --conda-frontend conda 
 ```
-Running the pipeline on a SLURM cluster is under implementation
+
 
 # Output description
 The main output is a csv file having the samples with SNPs,positions, depth, AA mutations
 There are other files that show the QC of the samples(html), average depth of coverage (test file) and image showing main mutaions with depth and allel frequencies
+* This pipeline is still under development for more refind results and different options to run
 
 # Note
  Development of this pipeline was Part of Ethiopian Malaria Genomics Network(EMAGEN) project funded by Bill and Melinda Gates Foundation(BMGF) used to analyze sequences from the project and others at the Armauer Hansen Research Institute(AHRI)
