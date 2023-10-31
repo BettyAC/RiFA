@@ -38,7 +38,7 @@ conda activate rifa
 ```
 4. Run the pipeline pipeline in Snakemake
 ```bash
-snakemake
+snakemake --forceall  --use-conda --cores 8 --conda-frontend conda 
 ```
 Running the pipeline on a SLURM cluster is under implementation
 
