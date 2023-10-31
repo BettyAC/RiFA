@@ -18,17 +18,17 @@ git clone https://github.com/BettyAC/rifa.git
 ```
 2. Example fastq files:
  #There are sample data in the example folder 
- #change directory into the repository folder, create a directory to save the fastq files
+ #change directory into the repository folder, check for example fastq files
 ```bash
-cd malpipeline/; sudo mkdir data/fastq; cd data/fastq/
+cd rifa/; ls data/fastq/
 ```
- #Copy the example data or your fastq files to the fastq folder 
+ #Copy the example data or your fastq files to the fastq folder if fastq folder is empty
 ```bash
 sudo cp data/example/* data/fastq
 ```
- #change back to main `malpipeline` directory
+ #change back to main `rifa` directory if you are in different directory
 ```bash
-cd ../../
+cd ..
 ```
 3. Create and activate conda environment
 The conda package manager has to be installed then run the below to source all dependencies into a new environment:
