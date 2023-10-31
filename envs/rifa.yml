@@ -1,4 +1,4 @@
-name:rifa
+name: rifa
 channels:
   -conda-forge
   -bioconda
