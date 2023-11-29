@@ -1,5 +1,5 @@
 # RiFA-Resistance in Falciparum Amplicon
-RiFA, Resistance in Falciparum Amplicon, identifies mutations within the main drug resistance genes (crt, mdr1, k13, dhfr, dhps and cytob) and produces results in the form of structured summary
+RiFA, Resistance in Falciparum Amplicon, identifies mutations within the main drug resistance genes (crt, mdr1, k13, dhfr, dhps and cytob) and produces results in the form of structured summary (This is still a work under progress for better refined results)
 
 # Background
 Malaria continues to be a huge public health challenge specially in low-income resource limited countries. The emergence and spread of drug resistant P. falciparum is creating an additional burden by reducing the efficacy of available anti-malarial drugs. Next generation sequencing is now becoming an important tool in Malaria drug resistance surveillance and efficacy studies and facilitates the detection of existing and emerging mutations associated with drug resistance. Once such approach is targeted amplicon sequencing which is now widely used to identify resistance conferring mutations for different genes. 
