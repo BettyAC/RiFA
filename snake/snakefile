@@ -33,7 +33,7 @@ rule bowtie:
     output:
         "results/bam/{sample}_aln.sam"
     shell:
-        " bowtie2 --very-sensitive  --end-to-end   -x data/reference/refs_all_index -1 {input.fwd} -2 {input.rev} -p 8 -S {output}"
+        " bowtie2 --very-sensitive  --end-to-end   -x data/reference/malref6_index -1 {input.fwd} -2 {input.rev} -p 8 -S {output}"
 
 
 rule tobam:
