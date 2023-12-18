@@ -1,10 +1,9 @@
 name: rifa
 channels:
-  -conda-forge
-  -bioconda
-  -defaults
+  - conda-forge
+  - bioconda
+  - defaults
 dependencies:
-  - bbtools=37.62=0
   - bcftools=1.15=haf5b3da_0
   - bowtie2=2.4.5=py38hfbc8389_2
   - bwa=0.7.17=h7132678_9
@@ -22,7 +21,6 @@ dependencies:
   - pandas=1.4.3=py38h47df419_0
   - python=3.8.13=h582c2e5_0_cpython
   - r=3.6.0=r36_0
-  - r-base=3.6.3=h316533a_
   - r-dplyr=1.0.0=r36h0357c0b_0
   - r-ggplot2=3.3.2=r36h6115d3f_0
   - samtools=1.15=h3843a85_0
