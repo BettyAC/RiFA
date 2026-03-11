@@ -1,8 +1,19 @@
-configfile: "data/config.yaml"
+configfile: "/home/betty/rifa/data/config.yaml"
 reference_fasta=config["reference_fasta"]
 #prefix=config["prefix"]
 
-(SAMPLES,)=glob_wildcards("data/fastq/{sample}_R1_001.fastq.gz")
+import os
+from snakemake.io import glob_wildcards
+
+# Define directories and samples (portable)
+DATA = os.path.expanduser("~/rifa/data/fastq")
+RESULTS = os.path.expanduser("~/rifa/results")
+HOME = os.path.expanduser("~/rifa")
+
+(SAMPLES,) = glob_wildcards(f"{DATA}/{{sample}}_R1_001.fastq.gz")
+
+
+#(SAMPLES,)=glob_wildcards("~/rifa/data/fastq/{sample}_R1_001.fastq.gz")
 
 ruleorder: bbduk > bowtie > tobam > samtools_sort > index > call_vcf > liftover  > annotate > extract_snpeff_info
 
@@ -12,95 +23,95 @@ ruleorder: bbduk > bowtie > tobam > samtools_sort > index > call_vcf > liftover 
 
 rule all:
     input:
-        expand("results/ann/{sample}.csv", sample=SAMPLES)
+        expand(f"{RESULTS}/ann/{{sample}}.csv", sample=SAMPLES)
 
 rule bbduk:
     input:
-        fwd="data/fastq/{sample}_R1_001.fastq.gz",
-        rev="data/fastq/{sample}_R2_001.fastq.gz"
+        fwd=f"{DATA}/{{sample}}_R1_001.fastq.gz",
+        rev=f"{DATA}/{{sample}}_R2_001.fastq.gz"
     output:
-        fwd="results/trimmed/{sample}_R1_trimmed.fastq.gz",
-        rev="results/trimmed/{sample}_R2_trimmed.fastq.gz",
-        stat="results/trimmed/{sample}_stats.txt"
+        fwd=f"{RESULTS}/trimmed/{{sample}}_R1_trimmed.fastq.gz",
+        rev=f"{RESULTS}/trimmed/{{sample}}_R2_trimmed.fastq.gz",
+        stat=f"{RESULTS}/trimmed/{{sample}}_stats.txt"
     shell:
-        "resources/bbduk.sh    trimq=20 maq=20 minlength=100  ordered=t  in={input.fwd} in2={input.rev} out={output.fwd} out2={output.rev} stats={output.stat}"
+        " {HOME}/resources/bbmap/bbduk.sh  threads=1  trimq=20 maq=20 minlength=100  ordered=t  in={input.fwd} in2={input.rev} out={output.fwd} out2={output.rev} stats={output.stat}"
 
 
 rule bowtie:
     input:
-        fwd="results/trimmed/{sample}_R1_trimmed.fastq.gz",
-        rev="results/trimmed/{sample}_R2_trimmed.fastq.gz"
+        fwd=f"{RESULTS}/trimmed/{{sample}}_R1_trimmed.fastq.gz",
+        rev=f"{RESULTS}/trimmed/{{sample}}_R2_trimmed.fastq.gz"
     output:
-        "results/bam/{sample}_aln.sam"
+        f"{RESULTS}/bam/{{sample}}_aln.sam"
     shell:
-        " bowtie2 --very-sensitive  --end-to-end   -x data/reference/malref6_index -1 {input.fwd} -2 {input.rev} -p 8 -S {output}"
+        " bowtie2 --very-sensitive  --end-to-end   -x {DATA}/reference/malref6_index -1 {input.fwd} -2 {input.rev} -p 8 -S {output}"
 
 
 rule tobam:
     input:
-        "results/bam/{sample}_aln.sam"
+        f"{RESULTS}/bam/{{sample}}_aln.sam"
     output:
-        "results/bam/{sample}_aln.bam"
+        f"{RESULTS}/bam/{{sample}}_aln.bam"
     shell:
         "samtools view -b {input} -o {output}"
 
 
 rule samtools_sort:
     input:
-        "results/bam/{sample}_aln.bam"
+        f"{RESULTS}/bam/{{sample}}_aln.bam"
     output:
-        "results/bam/{sample}.sorted.bam"
+        f"{RESULTS}/bam/{{sample}}.sorted.bam"
     shell:
         "samtools sort {input} -o {output}"
 
 rule index:
     input:
-        results/bam/{sample}.sorted.bam"
+        f"{RESULTS}/bam/{{sample}}.sorted.bam"
     output:
-        "results/bam/{sample}.sorted.bai"
+        f"{RESULTS}/bam/{{sample}}.sorted.bai"
     shell:
         "samtools index {input}"
 
 rule pileup_and_cons:
     input:
-        "results/bam/{sample}.sorted.bam"
+        f"{RESULTS}/bam/{{sample}}.sorted.bam"
     output:
-        "results/consensus/{sample}.fa"
+        f"{RESULTS}/consensus/{{sample}}.fa"
     shell:
         "samtools mpileup  -A -d 8000 -B -Q 0 --reference {reference_fasta}  {input} | ivar consensus -p {output}"
 
 rule coverage:
     input:
-        results/bam/{sample}.sorted.bam"
+        f"{RESULTS}/bam/{{sample}}.sorted.bam"
     output:
-        "results/stat/{sample}_coverage.txt"
+        f"{RESULTS}/stat/{{sample}}_coverage.txt"
     shell:
         "samtools flagstat {input} "
 
 rule depth:
     input:
-        "results/bam/{sample}.sorted.bam"
+        f"{RESULTS}/bam/{{sample}}.sorted.bam"
     output:
-        "results/stat/{sample}_depth.txt"
+        f"{RESULTS}/stat/{{sample}}_depth.txt"
     shell:
         "samtools depth {input} | awk '{sum+=$3} END { print sum/NR }' "
 
 
 rule call_vcf:
     input:
-        "results/bam/{sample}.sorted.bam"
+        f"{RESULTS}/bam/{{sample}}.sorted.bam"
     output:
-        "results/vcf/{sample}.vcf"
+        f"{RESULTS}/vcf/{{sample}}.vcf"
     shell:
         "bcftools mpileup  -f {reference_fasta}  {input} | bcftools call -vm > {output}"
 
 rule liftover:
     input:
-        "results/vcf/{sample}.vcf"
+        f"{RESULTS}/vcf/{{sample}}.vcf"
     output:
-        "results/vcf/a{sample}.vcf"
+        f"{RESULTS}/vcf/a{{sample}}.vcf"
     params:
-        script="scripts/adjust2.py"
+        script=f"{HOME}/scripts/adjust2.py"
 
     shell:
         """
@@ -133,36 +144,36 @@ rule liftover:
 
 rule annotate:
     input:
-        vcf="results/vcf/a{sample}.vcf",
-        snpeff_jar="resources/snpEff/snpEff.jar",
-        snpeff_database="resources/snpEff/data/Plasmodium_falciparum_3",
-        snpeff_config="resources/snpEff/custom.config",
-        snpeff_datadir="resources/snpEff/data",
+        vcf=f"{RESULTS}/vcf/a{{sample}}.vcf",
+        snpeff_jar=f"{HOME}/resources/snpEff/snpEff.jar",
+        snpeff_database=f"{HOME}/resources/snpEff/data/Plasmodium_falciparum_1",
+        snpeff_config=f"{HOME}/resources/snpEff/snpEff.config",
+        snpeff_datadir=f"{HOME}/resources/snpEff/data"
 #       pwd="results/pwd.txt"
     params:
-        working_dir="resources/snpEff",
-        snake_dir="snake",
+        working_dir=f"{HOME}/resources/snpEff",
+        snake_dir=f"{HOME}/snake"
 #       tmp="tmp/"
     output:
-        ann="results/ann/{sample}.ann"
+        ann=f"{RESULTS}/ann/{{sample}}.ann"
     shell:
        """
        cd  {params.working_dir}
-       java -Xmx20G -jar snpEff/snpEff.jar -c {input.snpeff_config}  Plasmodium_falciparum_1  -debug  {input.vcf} > {output}
+       java -Xmx20G -jar {HOME}/snpEff/snpEff.jar -c {input.snpeff_config}  Plasmodium_falciparum_1  -debug  {input.vcf} > {output}
        cd  {params.snake_dir}
        """
 
 rule extract_snpeff_info:
     input:
 #        expand("results/ann/{sample}.ann", sample=SAMPLES)
-        ann="results/ann/{sample}.ann"
+        ann=f"{RESULTS}/ann/{{sample}}.ann"
     output:
-        csv="results/ann/{sample}.csv"
+        csv=f"{RESULTS}/ann/{{sample}}.csv"
     params:
-        output_dir="results/ann"
+        output_dir=f"{HOME}/results/ann"
 #    script:
 #        "scripts/anntocsv.py"
     shell:
-        "python scripts/anntocsv.py {input.ann} {output.csv}"
+        "python {HOME}/scripts/anntocsv.py {input.ann} {output.csv}"
 
 
