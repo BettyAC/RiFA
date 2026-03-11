@@ -4,34 +4,22 @@ channels:
   - bioconda
   - defaults
 dependencies:
-  - bcftools=1.15=haf5b3da_0
-  - bowtie2=2.4.5=py38hfbc8389_2
-  - bwa=0.7.17=h7132678_9
-  - bzip2=1.0.8=h7f98852_4
-  - fastp=0.23.2=hb7a2d85_2
-  - fastqc=0.11.7=pl5.22.0_0
-  - gitdb=4.0.9=pyhd8ed1ab_0
-  - gitpython=3.1.27=pyhd8ed1ab_0
-  - ivar=1.3.1=hecb563c_3
-  - java-jdk=8.0.112=1
-  - matplotlib-base=3.2.2=py38h5d868c9_1
-  - multiqc=1.13a=pyhdfd78af_1
-  - numpy=1.23.1=py38h3a7f9d9_0
-  - openjdk=8.0.112=zulu8.19.0.1_3
-  - pandas=1.4.3=py38h47df419_0
-  - python=3.8.13=h582c2e5_0_cpython
-  - r=3.6.0=r36_0
-  - r-dplyr=1.0.0=r36h0357c0b_0
-  - r-ggplot2=3.3.2=r36h6115d3f_0
-  - samtools=1.15=h3843a85_0
-  - seqkit=2.2.0=h9ee0642_0
-  - simplejson=3.17.6=py38h0a891b7_1
-  - snakemake=7.8.5=hdfd78af_0
-  - snakemake-minimal=7.8.5=pyhdfd78af_0
-  - snpeff=5.1=hdfd78af_0
-  - sqlite=3.39.0=h4ff8645_0
-  - yaml=0.2.5=h7f98852_2
-  - zipp=3.8.0=pyhd8ed1ab_0
-  - zlib=1.2.12=h166bdaf_1
-  - zstd=1.5.2=h8a70e8d_2
+  - python=3.8
+  - bcftools=1.15
+  - bowtie2=2.4
+  - bwa=0.7
+  - fastp=0.23
+  - fastqc
+  - ivar=1.3
+  - seqkit
+  - samtools=1.15
+  - snpeff
+  - snakemake=7.8
+  - multiqc
+  - numpy
+  - pandas
+  - matplotlib-base
+  - gitpython
+  - zipp
+  - tabulate=0.8.10
 
